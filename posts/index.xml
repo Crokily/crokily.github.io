@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>ExampleSite</title>
-    <link>https://crokily.github.io/</link>
-    <description>Recent content on ExampleSite</description>
+    <title>Posts on ExampleSite</title>
+    <link>https://crokily.github.io/posts/</link>
+    <description>Recent content in Posts on ExampleSite</description>
     <image>
       <url>https://crokily.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://crokily.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 03 Jul 2022 13:47:55 +0800</lastBuildDate><atom:link href="https://crokily.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hello</title>
-      <link>https://crokily.github.io/hello/</link>
-      <pubDate>Sun, 03 Jul 2022 13:47:55 +0800</pubDate>
-      
-      <guid>https://crokily.github.io/hello/</guid>
-      <description>Hello Hello World!</description>
-    </item>
-    
+    <lastBuildDate>Sun, 03 Jul 2022 13:47:55 +0800</lastBuildDate><atom:link href="https://crokily.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello</title>
       <link>https://crokily.github.io/posts/hello/</link>
