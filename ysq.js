@@ -136,7 +136,7 @@ if (window.location.href.indexOf("bbs.mihoyo.com/ys") > 0) {
                 })
             },
             renderInfo: function (msg, baseInfoJson, abyssInfoJson) {
-                const panel = '<div id="app"><button @click="console.log(abyssInfo)">导出数据</button><genshin-info-render :msg="msg" :base-info="baseInfo.data" :abyss-info="abyssInfo.data"></genshin-info-render></div>';
+                const panel = '<div id="app"><genshin-info-render :msg="msg" :base-info="baseInfo.data" :abyss-info="abyssInfo.data"><button @click="console.log(abyssInfo)">导出数据</button></genshin-info-render></div>';
                 let div = document.createElement("div");
                 div.innerHTML = panel;
                 document.body.prepend(div);
