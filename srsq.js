@@ -1,4 +1,3 @@
-import {md5} from 'https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js'
 if (window.location.href.indexOf("www.miyoushe.com/sr") > 0) {
     if (!window._sr) {
         var StarRailInfoFetcher = function () {
@@ -8,31 +7,51 @@ if (window.location.href.indexOf("www.miyoushe.com/sr") > 0) {
             let div = document.createElement("div");
             div.innerHTML = '<p>正在载入脚本中...请等待</p>';
             document.body.prepend(div);
-            const uid = prompt('请输入需要查询的uid');
-            console.log('输入的uid: ' + uid);
-            if (uid.length !== 9) {
-                alert('请输入正确的uid！');
-            }
-
-            Promise.all([ths.queryBaseInfo(uid)]).then(values => {
-                let baseInfoJson = values[0];
-                if (baseInfoJson.retcode == 0) {
-                    console.log('查询成功，开始渲染结果');
-                    document.body.innerHTML = '';
-                    console.log(baseInfoJson)
-                    console.log('渲染完成');
-                } else if (baseInfoJson.retcode == -1) {
-                    alert('查询无结果，可能造成这种情况的原因：1.UID不存在 2.没有在米游社同步并公开角色信息');
-                } else {
-                    alert('查询失败！' + baseInfoJson.message);
+            ths.loadScript('https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js', function () {
+                const uid = prompt('请输入需要查询的uid');
+                console.log('输入的uid: ' + uid);
+                if (uid.length !== 9) {
+                    alert('请输入正确的uid！');
                 }
-            }).catch(err => {
-                alert('查询失败！' + err);
+
+                Promise.all([ths.queryBaseInfo(uid)]).then(values => {
+                    let baseInfoJson = values[0];
+                    if (baseInfoJson.retcode == 0) {
+                        console.log('查询成功，开始输出结果');
+                        document.body.innerHTML = '';
+                        console.log(baseInfoJson)
+                        // ths.renderInfo(uid + ' 查询成功', baseInfoJson, abyssInfoJson);
+                        console.log('输出完成');
+                    } else if (baseInfoJson.retcode == -1) {
+                        alert('查询无结果，可能造成这种情况的原因：1.UID不存在 2.没有在米游社同步并公开角色信息');
+                    } else {
+                        alert('查询失败！' + baseInfoJson.message);
+                    }
+                }).catch(err => {
+                    alert('查询失败！' + err);
+                });
             });
         };
 
         StarRailInfoFetcher.prototype = {
-
+            loadScript: function (url, callback) {
+                const script = document.createElement('script');
+                script.type = 'text/javascript';
+                if (script.readyState) {
+                    script.onreadystatechange = function () {
+                        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+                            script.onreadystatechange = null;
+                            callback();
+                        }
+                    }
+                } else {
+                    script.onload = function () {
+                        callback();
+                    }
+                }
+                script.src = url;
+                document.body.append(script);
+            },
             randomString: function (length) {
                 let result = "";
                 let characters = "abcdefghijklmnopqrstuvwxyz0123456789";
