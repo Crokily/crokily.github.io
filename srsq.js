@@ -19,8 +19,7 @@ if (window.location.href.indexOf("www.miyoushe.com/sr") > 0) {
                 if (baseInfoJson.retcode == 0) {
                     console.log('查询成功，开始渲染结果');
                     document.body.innerHTML = '';
-                    console.log(abyssInfoJson)
-                    // ths.renderInfo(uid + ' 查询成功', baseInfoJson, abyssInfoJson);
+                    console.log(baseInfoJson)
                     console.log('渲染完成');
                 } else if (baseInfoJson.retcode == -1) {
                     alert('查询无结果，可能造成这种情况的原因：1.UID不存在 2.没有在米游社同步并公开角色信息');
