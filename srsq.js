@@ -1,3 +1,4 @@
+import {md5} from 'https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js'
 if (window.location.href.indexOf("www.miyoushe.com/sr") > 0) {
     if (!window._sr) {
         var StarRailInfoFetcher = function () {
