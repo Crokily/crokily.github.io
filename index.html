@@ -1,3 +1,276 @@
-<html>
-        Hello,World!
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Colin Zheng's Professional Resume">
+        <meta name="author" content="Colin Zheng">
+        <meta name="keywords" content="resume, CV, Colin Zheng, professional">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Colin Zheng - Professional Resume</title>
+        <style>
+            /* 设置全局样式 */
+            :root {
+                --primary-color: #2563eb;
+                --secondary-color: #1e40af;
+                --text-primary: #1f2937;
+                --text-secondary: #4b5563;
+                --background-light: #f3f4f6;
+            }
+
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                color: var(--text-primary);
+                line-height: 1.4;
+            }
+
+            @media print {
+                @page {
+                    size: A4;
+                    margin: 0;
+                }
+                body {
+                    margin: 0;
+                    padding: 0;
+                    background: white;
+                    display: block;
+                    width: 21cm;
+                    height: 29.7cm;
+                    zoom: 100%;
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+                main {
+                    margin: 0;
+                    padding: 0;
+                    display: block;
+                }
+                article.a4-label {
+                    width: 21cm;
+                    height: 29.7cm;
+                    margin: 0;
+                    padding: 1.5rem !important;
+                    box-shadow: none !important;
+                    border: none;
+                    border-radius: 0;
+                    background: white;
+                }
+                .button-bar,
+                nav.button-bar,
+                nav[aria-label="Resume actions"] {
+                    display: none !important;
+                }
+                /* 移除所有可能的flex布局，确保打印时布局正确 */
+                .flex {
+                    display: block;
+                }
+                /* 移除所有空白和间距 */
+                .space-x-4 {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+
+            /* 自定义样式 */
+            h1 {
+                color: var(--primary-color);
+                letter-spacing: -0.025em;
+                font-size: 1.75rem !important;
+                margin-bottom: 0.25rem;
+            }
+
+            h2 {
+                color: var(--secondary-color);
+                border-bottom: 2px solid var(--background-light);
+                padding-bottom: 0.15rem;
+                margin-bottom: 0.5rem;
+                font-size: 1.25rem !important;
+            }
+
+            h3 {
+                color: var(--text-primary);
+                font-size: 1rem !important;
+                margin-bottom: 0.25rem;
+            }
+
+            section {
+                margin-bottom: 0.75rem;
+            }
+
+            ul.list-disc {
+                margin-top: 0.25rem;
+            }
+
+            ul.list-disc li {
+                margin-bottom: 0.15rem;
+                font-size: 0.85rem;
+                color: var(--text-secondary);
+                line-height: 1.4;
+            }
+
+            ul.list-disc li::marker {
+                color: var(--primary-color);
+            }
+
+            a {
+                color: var(--primary-color);
+                text-decoration: none;
+                transition: color 0.2s;
+            }
+
+            a:hover {
+                color: var(--secondary-color);
+            }
+
+            time, address p {
+                font-size: 0.85rem;
+                color: var(--text-secondary);
+            }
+
+            .summary p {
+                font-size: 0.85rem;
+                color: var(--text-secondary);
+                line-height: 1.4;
+                margin-top: 0.25rem;
+            }
+
+            p {
+                font-size: 0.85rem;
+                margin-bottom: 0.25rem;
+            }
+
+            /* 关键词高亮样式 */
+            .keyword {
+                color: var(--primary-color);
+                font-weight: 600;
+            }
+        </style>
+    </head>
+
+    <body class="bg-gray-100 flex justify-center items-center min-h-screen py-10">
+        <main class="flex items-start space-x-4">
+            <article class="flex flex-col grow bg-white a4-label w-[21cm] h-[29.7cm] rounded-lg shadow-lg p-6 space-y-3">
+                <header class="flex flex-row flex-nowrap justify-between">
+                    <div class="flex flex-col items-center">
+                        <h1 class="text-3xl font-bold leading-6">Colin Zheng</h1>
+                        <span class="text-xs text-gray-500">Full Stack Developer</span>
+                    </div>
+                    
+                    <address class="justify-items-end not-italic">
+                        <p>0481908116 | <a href="mailto:Crokily@gmail.com" class="hover:text-blue-600">Crokily@gmail.com</a> | Kingsford, Sydney | 500 Visa</p>
+                        <p><a href="https://github.com/Crokily" target="_blank" class="hover:text-blue-600">github.com/Crokily</a> | <a href="https://linkedin.com/in/Crokily" target="_blank" class="hover:text-blue-600">linkedin.com/in/Crokily</a> | <a href="https://coly.cc" target="_blank" class="hover:text-blue-600">coly.cc</a></p>
+                    </address>
+                </header>
+                
+                <section class="flex flex-col space-y-1" aria-label="Education">
+                    <h2 class="font-bold">Education</h2>
+                    <article class="flex flex-row flex-nowrap justify-between">
+                        <div>
+                            <div class="flex items-center">
+                                <h3 class="font-bold">Master of Information Technology</h3>
+                                <span class="text-sm text-gray-500 ml-2">WAM 82</span>
+                            </div>
+                            <p>The University of New South Wales</p>
+                        </div>
+                        <div class="justify-items-end">
+                            <time>2023.09-2025.09</time>
+                            <p>Sydney, Australia</p>
+                        </div>
+                    </article>
+                    <article class="flex flex-row flex-nowrap justify-between">
+                        <div>
+                            <div class="flex items-center">
+                                <h3 class="font-bold">Bachelor of Software Engineering</h3>
+                                <span class="text-sm text-gray-500 ml-2">WAM 81.7</span>
+                            </div>
+                            <p>Zhongkai University of Agriculture and Engineering</p>
+                        </div>
+                        <div class="justify-items-end">
+                            <time>2017.09-2021.06</time>
+                            <p>Guangzhou, China</p>
+                        </div>
+                    </article>
+                </section>
+                
+                <section class="flex flex-col space-y-2" aria-label="Project">
+                    <h2 class="font-bold">Projects</h2>
+                    <article class="flex flex-col" aria-label="Word Dictation Application">
+                        <div class="flex items-center">
+                            <h3 class="font-bold">Word Dictation Application</h3>
+                            <span class="text-sm text-gray-500 ml-2">d.coly.cc</span>
+                        </div>
+                        <p>Designed and implemented an English word dictation application using <span class="keyword">React</span>, <span class="keyword">Next.js</span>, <span class="keyword">TypeScript</span>, <span class="keyword">Tailwind CSS</span>, and Shadcn/UI.</p>
+                        <ul class="list-disc list-inside">
+                            <li>Implemented smooth dictation experience using Web Speech API (TTS) with customizable playback settings</li>
+                            <li>Optimized audio playback and auto-dictation logic using <span class="keyword">useRef</span> and <span class="keyword">useCallback hooks</span></li>
+                            <li>Developed data management system supporting .txt/.csv dictionary uploads with word definitions</li>
+                            <li>Implemented persistent storage using localStorage for seamless user experience without login</li>
+                            <li>Automated deployment using <span class="keyword">Docker</span>, <span class="keyword">GitHub Actions</span>, and <span class="keyword">Vercel</span></li>
+                        </ul>
+                    </article>
+                    <article class="flex flex-col" aria-label="Factory Management System">
+                        <div class="flex items-center">
+                            <h3 class="font-bold">Factory Management System</h3>
+                        </div>
+                        <p>Developed a comprehensive factory management system for order, product, inventory, and production status tracking</p>
+                        <ul class="list-disc list-inside">
+                            <li>Built frontend using <span class="keyword">Vue.js</span> and Element UI, backend with <span class="keyword">Django</span> framework and <span class="keyword">MySQL</span> database</li>
+                            <li>Implemented <span class="keyword">Redis</span> caching for real-time order status updates and improved response times</li>
+                            <li>Integrated OCR API for automated data extraction from PDF/images to reduce manual entry errors</li>
+                            <li>Developed custom Excel export functionality for factory invoices using <span class="keyword">Python</span></li>
+                            <li>Deployed system on <span class="keyword">AWS EC2</span> for reliable production use</li>
+                        </ul>
+                    </article>
+                    <article class="flex flex-col" aria-label="Online Classroom System">
+                        <div class="flex items-center">
+                            <h3 class="font-bold">Online Classroom System</h3>
+                        </div>
+                        <p>Developed an online education platform using <span class="keyword">Vue.js</span>, <span class="keyword">Node.js</span>, <span class="keyword">MongoDB</span>, and <span class="keyword">Redis</span></p>
+                        <ul class="list-disc list-inside">
+                            <li>Implemented features for recorded courses, smart question banks, and online examinations</li>
+                            <li>Integrated learning analytics tools for tracking student progress and optimizing teaching outcomes</li>
+                            <li>Built real-time communication features for interactive learning experiences</li>
+                            <li>Repository available at: gitee.com/Crokily/ykt</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section class="flex flex-col space-y-1" aria-label="Skills">
+                    <h2 class="font-bold">Skills</h2>
+                    <article class="flex flex-col">
+                        <ul class="list-disc list-inside">
+                            <li>Frontend: <span class="keyword">React</span>, <span class="keyword">Vue.js</span>, <span class="keyword">Next.js</span>, <span class="keyword">Tailwind CSS</span>, Shadcn/UI, Element UI, CSS3</li>
+                            <li>Backend: <span class="keyword">Node.js</span>, <span class="keyword">Express.js</span>, <span class="keyword">Python</span>, <span class="keyword">Django</span>, <span class="keyword">WebSocket</span></li>
+                            <li>Database: <span class="keyword">MySQL</span>, <span class="keyword">MongoDB</span>, <span class="keyword">Redis</span></li>
+                            <li>Cloud & DevOps: <span class="keyword">AWS EC2</span>, Cloudflare R2, <span class="keyword">Vercel</span>, Linux, <span class="keyword">Docker</span>, GitHub Actions</li>
+                            <li>Version Control: <span class="keyword">Git</span>, GitHub, CI/CD workflows</li>
+                            <li>AI Development: Dify, LangChain, RAG systems, Transfer Learning, Image Classification</li>
+                            <li>Media Software: Adobe Photoshop, Illustrator, Premiere, After Effects</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section class="flex flex-col space-y-1 summary" aria-label="Summary">
+                    <h2 class="font-bold">Summary</h2>
+                    <article class="flex flex-col">
+                        <p class="text-justify">
+                            <span class="keyword">Full-stack developer</span> with experience in <span class="keyword">modern web technologies</span> and AI applications. Previously worked at NetEase as a Product Operations Intern, managing children's programming product "CodeCombat". Strong background in educational technology and product development, with proven ability to optimize user experience and drive engagement through community management and content creation.
+                        </p>
+                    </article>
+                </section>
+            </article>
+
+            <nav class="button-bar flex flex-col space-y-2" aria-label="Resume actions">
+                <button onclick="downloadPDF()" class="w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white rounded shadow-md" aria-label="Download resume">
+                    <span aria-hidden="true">↓</span>
+                </button>
+            </nav>
+        </main>
+
+        <script>
+            function downloadPDF() {
+                window.print();
+            }
+        </script>
+    </body>
 </html>
