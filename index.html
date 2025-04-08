@@ -69,7 +69,7 @@
             body {
                 font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
                 color: var(--text-primary);
-                line-height: 1.3; /* 压缩行高 */
+                line-height: 1.4;
             }
 
 
@@ -85,30 +85,30 @@
             h2 {
                 color: var(--secondary-color);
                 border-bottom: 2px solid var(--background-light);
-                padding-bottom: 0.1rem; /* 减少底部填充 */
-                margin-bottom: 0.3rem; /* 减少标题下方间距 */
-                font-size: 1.2rem !important; /* 缩小标题字体 */
+                padding-bottom: 0.15rem;
+                margin-bottom: 0.5rem;
+                font-size: 1.25rem !important;
             }
 
             h3 {
                 color: var(--text-primary);
-                font-size: 0.95rem !important; /* 缩小子标题字体 */
-                margin-bottom: 0.15rem; /* 减少子标题下方间距 */
+                font-size: 1rem !important;
+                margin-bottom: 0.25rem;
             }
 
             section {
-                margin-bottom: 0.5rem; /* 减少部分间距 */
+                margin-bottom: 0.75rem;
             }
 
             ul.list-disc {
-                margin-top: 0.15rem; /* 减少列表与标题间距 */
+                margin-top: 0.25rem;
             }
 
             ul.list-disc li {
-                margin-bottom: 0.1rem; /* 减少列表项间距 */
-                font-size: 0.82rem; /* 缩小字体 */
+                margin-bottom: 0.15rem;
+                font-size: 0.85rem;
                 color: var(--text-secondary);
-                line-height: 1.25; /* 压缩行高 */
+                line-height: 1.4;
             }
 
             ul.list-disc li::marker {
@@ -138,8 +138,8 @@
             }
 
             p {
-                font-size: 0.82rem; /* 缩小段落字体 */
-                margin-bottom: 0.15rem; /* 减少段落间距 */
+                font-size: 0.85rem;
+                margin-bottom: 0.25rem;
             }
 
             /* 关键词高亮样式 */
@@ -163,7 +163,7 @@
 
     <body class="bg-gray-100 flex justify-center items-center min-h-screen py-10">
         <main class="flex items-start space-x-4">
-            <article class="flex flex-col grow bg-white a4-label w-[21cm] h-[29.7cm] rounded-lg shadow-lg p-6 space-y-2">
+            <article class="flex flex-col grow bg-white a4-label w-[21cm] h-[29.7cm] rounded-lg shadow-lg p-6 space-y-3">
                 <header class="flex flex-row flex-nowrap justify-between">
                     <div class="flex flex-col items-center">
                         <h1 class="text-3xl font-bold leading-6">Shouli Zheng</h1>
@@ -206,7 +206,7 @@
                     </article>
                 </section>
 
-                <section class="flex flex-col space-y-0.5" aria-label="Experience">
+                <section class="flex flex-col space-y-1" aria-label="Experience">
                     <h2 class="font-bold">Work Experience</h2>
                     <article class="flex flex-col mb-2" aria-label="UNSW AI Society">
                         <div class="flex flex-row flex-nowrap justify-between">
@@ -244,15 +244,15 @@
                     </article>
                 </section>
 
-                <section class="flex flex-col space-y-0.5" aria-label="Project">
+                <section class="flex flex-col space-y-1" aria-label="Project">
                     <h2 class="font-bold">Projects</h2>
-                    <article class="flex flex-col mb-1" aria-label="Word Dictation Application">
+                    <article class="flex flex-col" aria-label="Word Dictation Application">
                         <div class="flex items-center">
                             <h3 class="font-bold">Word Dictation Application</h3>
                             <a href="https://d.coly.cc" target="_blank" class="text-sm text-gray-500 ml-2 link-no-style">d.coly.cc</a>
                         </div>
-                        <p class="my-0.5">Designed and implemented an English word dictation application using <span class="keyword">React</span>, <span class="keyword">Next.js</span>, <span class="keyword">TypeScript</span>, <span class="keyword">Tailwind CSS</span>, and Shadcn/UI.</p>
-                        <ul class="list-disc list-inside mt-0 mb-0">
+                        <p>Designed and implemented an English word dictation application using <span class="keyword">React</span>, <span class="keyword">Next.js</span>, <span class="keyword">TypeScript</span>, <span class="keyword">Tailwind CSS</span>, and Shadcn/UI.</p>
+                        <ul class="list-disc list-inside">
                             <li>Implemented smooth dictation experience using Web Speech API (TTS) with customizable playback settings</li>
                             <li>Optimized audio playback and auto-dictation logic using <span class="keyword">useRef</span> and <span class="keyword">useCallback hooks</span></li>
                             <li>Developed data management system supporting .txt/.csv dictionary uploads with word definitions</li>
@@ -260,12 +260,12 @@
                             <li>Automated deployment using <span class="keyword">Docker</span>, <span class="keyword">GitHub Actions</span>, and <span class="keyword">Vercel</span></li>
                         </ul>
                     </article>
-                    <article class="flex flex-col mb-1" aria-label="Factory Management System">
+                    <article class="flex flex-col" aria-label="Factory Management System">
                         <div class="flex items-center">
                             <h3 class="font-bold">Factory Management System</h3>
                         </div>
-                        <p class="my-0.5">Developed a comprehensive factory management system for order, product, inventory, and production status tracking</p>
-                        <ul class="list-disc list-inside mt-0 mb-0">
+                        <p>Developed a comprehensive factory management system for order, product, inventory, and production status tracking</p>
+                        <ul class="list-disc list-inside">
                             <li>Built frontend using <span class="keyword">Vue.js</span> and Element UI, backend with <span class="keyword">Django</span> framework and <span class="keyword">MySQL</span> database</li>
                             <li>Implemented <span class="keyword">Redis</span> caching for real-time order status updates and improved response times</li>
                             <li>Integrated OCR API for automated data extraction from PDF/images to reduce manual entry errors</li>
@@ -273,12 +273,12 @@
                             <li>Deployed system on <span class="keyword">AWS EC2</span> for reliable production use</li>
                         </ul>
                     </article>
-                    <article class="flex flex-col mb-1" aria-label="Online Classroom System">
+                    <article class="flex flex-col" aria-label="Online Classroom System">
                         <div class="flex items-center">
                             <h3 class="font-bold">Online Classroom System</h3>
                         </div>
-                        <p class="my-0.5">Developed an online education platform using <span class="keyword">Vue.js</span>, <span class="keyword">Node.js</span>, <span class="keyword">MongoDB</span>, and <span class="keyword">Redis</span></p>
-                        <ul class="list-disc list-inside mt-0 mb-0">
+                        <p>Developed an online education platform using <span class="keyword">Vue.js</span>, <span class="keyword">Node.js</span>, <span class="keyword">MongoDB</span>, and <span class="keyword">Redis</span></p>
+                        <ul class="list-disc list-inside">
                             <li>Implemented features for recorded courses, smart question banks, and online examinations</li>
                             <li>Integrated learning analytics tools for tracking student progress and optimizing teaching outcomes</li>
                             <li>Built real-time communication features for interactive learning experiences</li>
