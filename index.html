@@ -55,8 +55,8 @@
                     margin: 0;
                     padding: 0;
                 }
-            }   
-            
+            }
+
             /* 设置全局样式 */
             :root {
                 --primary-color: #2563eb;
@@ -147,6 +147,17 @@
                 color: var(--primary-color);
                 font-weight: 600;
             }
+
+            /* 无样式链接，只有指针样式 */
+            .link-no-style {
+                color: inherit;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .link-no-style:hover {
+                color: inherit;
+            }
         </style>
     </head>
 
@@ -158,13 +169,13 @@
                         <h1 class="text-3xl font-bold leading-6">Shouli Zheng</h1>
                         <span class="text-xs text-gray-500">Full Stack Developer</span>
                     </div>
-                    
+
                     <address class="justify-items-end not-italic">
                         <p>0481908116 | <a href="mailto:Crokily@gmail.com" class="hover:text-blue-600">Crokily@gmail.com</a> | Kingsford, Sydney | 500 Visa</p>
                         <p><a href="https://github.com/Crokily" target="_blank" class="hover:text-blue-600">github.com/Crokily</a> | <a href="https://linkedin.com/in/Crokily" target="_blank" class="hover:text-blue-600">linkedin.com/in/Crokily</a> | <a href="https://coly.cc" target="_blank" class="hover:text-blue-600">coly.cc</a></p>
                     </address>
                 </header>
-                
+
                 <section class="flex flex-col space-y-1" aria-label="Education">
                     <h2 class="font-bold">Education</h2>
                     <article class="flex flex-row flex-nowrap justify-between">
@@ -194,13 +205,13 @@
                         </div>
                     </article>
                 </section>
-                
+
                 <section class="flex flex-col space-y-2" aria-label="Project">
                     <h2 class="font-bold">Projects</h2>
                     <article class="flex flex-col" aria-label="Word Dictation Application">
                         <div class="flex items-center">
                             <h3 class="font-bold">Word Dictation Application</h3>
-                            <span class="text-sm text-gray-500 ml-2">d.coly.cc</span>
+                            <a href="https://d.coly.cc" target="_blank" class="text-sm text-gray-500 ml-2 link-no-style">d.coly.cc</a>
                         </div>
                         <p>Designed and implemented an English word dictation application using <span class="keyword">React</span>, <span class="keyword">Next.js</span>, <span class="keyword">TypeScript</span>, <span class="keyword">Tailwind CSS</span>, and Shadcn/UI.</p>
                         <ul class="list-disc list-inside">
@@ -257,7 +268,7 @@
                     <h2 class="font-bold">Summary</h2>
                     <article class="flex flex-col">
                         <p class="text-justify">
-                            <span class="keyword">Full-stack developer</span> with experience in <span class="keyword">modern web technologies</span> and AI applications. Previously worked at NetEase as a Product Operations Intern, managing children's programming product "CodeCombat". Strong background in educational technology and product development, with proven ability to optimize user experience and drive engagement through community management and content creation.Certified as a <span class="keyword">Microsoft Azure Data Scientist Associate</span>, with additional experience participating in hackathons. 
+                            <span class="keyword">Full-stack developer</span> with experience in <span class="keyword">modern web technologies</span> and AI applications. Previously worked at NetEase as a Product Operations Intern, managing children's programming product "CodeCombat". Strong background in educational technology and product development, with proven ability to optimize user experience and drive engagement through community management and content creation.Certified as a <span class="keyword">Microsoft Azure Data Scientist Associate</span>, with additional experience participating in hackathons.
                         </p>
                     </article>
                 </section>
