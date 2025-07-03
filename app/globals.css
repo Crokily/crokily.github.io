@@ -38,8 +38,8 @@ body {
     background: white !important;
     color: black !important;
     display: block;
-    width: 21cm;
-    height: 29.7cm;
+    width: 210mm;
+    height: 297mm;
     zoom: 100%;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -53,14 +53,16 @@ body {
   }
   
   #resume-content {
-    width: 21cm !important;
-    height: 29.7cm !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
     margin: 0 !important;
-    padding: 1.5rem !important;
     box-shadow: none !important;
     border: none !important;
     border-radius: 0 !important;
     background: white !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
   
   .print\:hidden {

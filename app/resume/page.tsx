@@ -1,4 +1,4 @@
-import DownloadButton from './DownloadButton';
+import DownloadButton from './components/DownloadButton';
 import { resumeData } from './resumeData';
 import { highlightKeywords, processLinksInText, processQuotes } from './utils';
 
@@ -6,20 +6,25 @@ export default function ResumePage() {
   const { personalInfo, education, experience, projects } = resumeData;
 
   return (
-    <main className="min-h-screen bg-gray-100 p-4 sm:p-8 flex flex-col items-center">
+    <main className="min-h-screen bg-gray-100 p-2 flex flex-col items-center">
       {/* A4 Container */}
       <div
         id="resume-content"
-        className="max-w-4xl w-full min-h-screen bg-white text-gray-800 p-12 shadow-2xl"
-        style={{
-          fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-          lineHeight: 1.4,
-        }}
+        className="bg-white text-gray-800 shadow-2xl"
+                  style={{
+            fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+            lineHeight: 1.2,
+            width: '210mm',
+            minHeight: '297mm',
+            maxHeight: '297mm',
+            padding: '5mm',
+            boxSizing: 'border-box',
+          }}
       >
         {/* Header */}
-        <header className="flex flex-row flex-nowrap justify-between mb-6">
+        <header className="flex flex-row flex-nowrap justify-between mb-2">
           <div className="flex flex-col items-center">
-            <h1 className="text-3xl font-bold leading-6 text-blue-600 tracking-wide">
+            <h1 className="text-2xl font-bold leading-5 text-blue-600 tracking-wide">
               {personalInfo.name}
             </h1>
             <span className="text-xs text-gray-500">{personalInfo.title}</span>
@@ -48,10 +53,10 @@ export default function ResumePage() {
         </header>
 
         {/* Education */}
-        <section className="flex flex-col space-y-1 mb-6" aria-label="Education">
-          <h2 className="font-bold text-xl text-blue-700 border-b-2 border-gray-200 pb-1 mb-2">Education</h2>
+        <section className="flex flex-col space-y-0.5 mb-2" aria-label="Education">
+          <h2 className="font-bold text-base text-blue-700 border-b-2 border-gray-200 pb-0.5 mb-1">Education</h2>
           {education.map((edu, index) => (
-            <article key={index} className="flex flex-row flex-nowrap justify-between mb-2">
+                          <article key={index} className="flex flex-row flex-nowrap justify-between mb-1">
               <div>
                 <div className="flex items-center">
                   <h3 className="font-bold">{edu.degree}</h3>
@@ -68,11 +73,11 @@ export default function ResumePage() {
         </section>
 
         {/* Work Experience */}
-        <section className="flex flex-col space-y-1 mb-6" aria-label="Experience">
-          <h2 className="font-bold text-xl text-blue-700 border-b-2 border-gray-200 pb-1 mb-2">Work Experience</h2>
+        <section className="flex flex-col space-y-0.5 mb-2" aria-label="Experience">
+          <h2 className="font-bold text-base text-blue-700 border-b-2 border-gray-200 pb-0.5 mb-1">Work Experience</h2>
           
-          {experience.map((exp, index) => (
-            <article key={index} className="flex flex-col mb-4" aria-label={exp.title}>
+                      {experience.map((exp, index) => (
+              <article key={index} className="flex flex-col mb-1.5" aria-label={exp.title}>
               <div className="flex flex-row flex-nowrap justify-between">
                 <div>
                   <h3 className="font-bold">{exp.title}</h3>
@@ -82,7 +87,7 @@ export default function ResumePage() {
                   {exp.location && <p className="text-sm text-gray-600">{exp.location}</p>}
                 </div>
               </div>
-              <ul className="list-disc list-inside mt-2 mb-2 text-sm text-gray-700 space-y-1">
+                              <ul className="list-disc list-inside mt-0.5 mb-0.5 text-sm text-gray-700 space-y-0">
                 {exp.achievements.map((achievement, achIndex) => (
                   <li key={achIndex}>
                     {processLinksInText(processQuotes(achievement))}
@@ -94,11 +99,11 @@ export default function ResumePage() {
         </section>
 
         {/* Projects */}
-        <section className="flex flex-col space-y-1" aria-label="Project">
-          <h2 className="font-bold text-xl text-blue-700 border-b-2 border-gray-200 pb-1 mb-2">Projects</h2>
+        <section className="flex flex-col space-y-0.5" aria-label="Project">
+          <h2 className="font-bold text-base text-blue-700 border-b-2 border-gray-200 pb-0.5 mb-1">Projects</h2>
           
-          {projects.map((project, index) => (
-            <article key={index} className="flex flex-col mb-3" aria-label={project.name}>
+                      {projects.map((project, index) => (
+              <article key={index} className="flex flex-col mb-1" aria-label={project.name}>
               <div className="flex items-center">
                 <h3 className="font-bold">{project.name}</h3>
                 {project.url && (
@@ -107,10 +112,10 @@ export default function ResumePage() {
                   </a>
                 )}
               </div>
-              <p className="text-sm mb-1">
-                {highlightKeywords(project.description)}
-              </p>
-              <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                              <p className="text-sm mb-0">
+                  {highlightKeywords(project.description)}
+                </p>
+                <ul className="list-disc list-inside text-sm text-gray-700 space-y-0">
                 {project.highlights.map((highlight, hlIndex) => (
                   <li key={hlIndex}>
                     {highlightKeywords(highlight)}
