@@ -26,7 +26,7 @@ export default function DownloadButton() {
 
     } catch (error) {
       console.error('Failed to download PDF:', error);
-      alert('下载PDF失败，请查看控制台获取更多信息。');
+      alert('Failed to download PDF, please check the console for more information.');
     } finally {
       setIsLoading(false);
     }
@@ -39,7 +39,7 @@ export default function DownloadButton() {
         disabled={isLoading}
         className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105 disabled:bg-gray-400 disabled:cursor-not-allowed"
       >
-        {isLoading ? '生成中...' : '下载 PDF'}
+        {isLoading ? 'Generating...' : 'Download PDF'}
       </button>
     </div>
   );
