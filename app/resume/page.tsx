@@ -17,7 +17,7 @@ export default function ResumePage() {
           width: '210mm',
           minHeight: '297mm',
           maxHeight: '297mm',
-          padding: '3mm',
+          padding: '3.25mm',
           boxSizing: 'border-box',
         }}
       >
@@ -53,7 +53,7 @@ export default function ResumePage() {
         </header>
 
         {/* Education */}
-        <section className="flex flex-col space-y-0.5" aria-label="Education">
+        <section className="flex flex-col space-y-0.5 mb-1" aria-label="Education">
           <h2 className="font-bold text-base text-blue-700 border-b-2 border-gray-200">Education</h2>
           {education.map((edu, index) => (
             <article key={index} className="flex flex-row flex-nowrap justify-between">
@@ -73,7 +73,7 @@ export default function ResumePage() {
         </section>
 
         {/* Projects */}
-        <section className="flex flex-col space-y-0.5" aria-label="Project">
+        <section className="flex flex-col space-y-0.5 mb-1" aria-label="Project">
           <h2 className="font-bold text-base text-blue-700 border-b-2 border-gray-200">Projects</h2>
           
           {projects.map((project, index) => (
@@ -104,8 +104,8 @@ export default function ResumePage() {
               </p>
 
               {/* Tech Stack */}
-              <div className="text-xs text-gray-700 italic">
-                <span>{project.techStack.join(', ')}</span>
+              <div className="text-xs text-blue-600 italic">
+                <span>{project.techStack?.join(', ')}</span>
               </div>
               
               {/* Contributions */}
@@ -123,11 +123,11 @@ export default function ResumePage() {
         </section>
 
         {/* Work Experience */}
-        <section className="flex flex-col space-y-0.5" aria-label="Experience">
+        <section className="flex flex-col space-y-0.5 mb-1" aria-label="Experience">
           <h2 className="font-bold text-base text-blue-700 border-b-2 border-gray-200">Work Experience</h2>
           
           {experience.map((exp, index) => (
-            <article key={index} className="flex flex-col" aria-label={`${exp.company} ${exp.title}`}>
+            <article key={index} className="flex flex-col mb-2" aria-label={`${exp.company} ${exp.title}`}>
               {/* Company and Role Header */}
               <div className="flex flex-row flex-nowrap justify-between">
                 <div>
@@ -157,7 +157,7 @@ export default function ResumePage() {
                 </div>
               )}
               {/* Tech Stack, 字体更小且斜体，和正文对比更明显 */}
-              <div className="text-xs text-gray-700 italic">
+              <div className="text-xs text-blue-600 italic">
                 <span>{exp.techStack.join(', ')}</span>
               </div>
 

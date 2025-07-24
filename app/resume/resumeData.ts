@@ -44,16 +44,19 @@ export interface ResumeData {
 
 // 关键词列表 - 这些词会被高亮显示
 export const keywords = [
-  'AI-powered', 'Next.js', 'Python', 'Tailwind CSS', 'Supabase', 'GPT API', 'discord.py',
+  'AI-powered', 'AI Agent', 'AI Workflow', 'Full-stack Development', 'Frontend', 'Backend', 
+  'Next.js', 'Python', 'Tailwind CSS', 'Supabase', 'GPT API', 'discord.py', 
   'agile methodologies', 'GitHub Issues', 'v0.dev', 'real-time transcription', 
   'automatic meeting summarization', 'SPF', 'DKIM', 'DMARC', 'product requirement documents',
   'technical requirements', 'React', 'TypeScript', 'useRef', 'useCallback hooks',
   'Docker', 'GitHub Actions', 'Vercel', 'Vue.js', 'Django', 'MySQL', 'Redis',
   'AWS EC2', 'Node.js', 'MongoDB', 'FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Alembic',
-  'Py-Cord', 'OpenAI', 'Gemini APIs', 'VPS', 'MUI', 'TailwindCSS', 'Zustand',
+  'Py-Cord', 'OpenAI', 'Gemini APIs', 'PydanticAI', 'VPS', 'MUI', 'Zustand',
   'OCR API', 'Material-UI', 'Vite', 'Express', 'Drizzle ORM', 'Upstash Redis',
   'AI SDK', 'Zod', 'Linux VPS', 'JWT', 'RESTful API', 'CI/CD', 'Nginx', 'Ant Design',
   'Axios', 'Openpyxl', 'pytest', 'MVC', 'Custom Hooks', 'responsive', 'containerization',
+  'query optimization', 'data persistence', 'asynchronous task queue', 'Worker process',
+  'scalable', 'high availability',
   '10+', '46.9%', '7-day', '150+', '50%', '90%', '3x'
 ];
 
