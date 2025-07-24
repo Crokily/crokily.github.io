@@ -5,7 +5,6 @@ export interface ResumeData {
     phone: string;
     email: string;
     location: string;
-    visa: string;
     links: {
       github: string;
       linkedin: string;
@@ -20,17 +19,26 @@ export interface ResumeData {
     wam?: string;
   }[];
   experience: {
-    title: string;
     company: string;
+    title: string;
     duration: string;
     location?: string;
-    achievements: string[];
+    overview: string;
+    project?: {
+      name: string;
+      description: string;
+    };
+    contributions: string[];
+    techStack: string[];
   }[];
   projects: {
     name: string;
+    comment?: string;
     url?: string;
+    duration?: string;
     description: string;
-    highlights: string[];
+    contributions: string[];
+    techStack?: string[];
   }[];
 }
 
@@ -41,21 +49,25 @@ export const keywords = [
   'automatic meeting summarization', 'SPF', 'DKIM', 'DMARC', 'product requirement documents',
   'technical requirements', 'React', 'TypeScript', 'useRef', 'useCallback hooks',
   'Docker', 'GitHub Actions', 'Vercel', 'Vue.js', 'Django', 'MySQL', 'Redis',
-  'AWS EC2', 'Node.js', 'MongoDB', '10+', '46.9%', '7-day', '150+'
+  'AWS EC2', 'Node.js', 'MongoDB', 'FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Alembic',
+  'Py-Cord', 'OpenAI', 'Gemini APIs', 'VPS', 'MUI', 'TailwindCSS', 'Zustand',
+  'OCR API', 'Material-UI', 'Vite', 'Express', 'Drizzle ORM', 'Upstash Redis',
+  'AI SDK', 'Zod', 'Linux VPS', 'JWT', 'RESTful API', 'CI/CD', 'Nginx', 'Ant Design',
+  'Axios', 'Openpyxl', 'pytest', 'MVC', 'Custom Hooks', 'responsive', 'containerization',
+  '10+', '46.9%', '7-day', '150+', '50%', '90%', '3x'
 ];
 
 export const resumeData: ResumeData = {
   personalInfo: {
     name: "Colin Zheng",
-    title: "Full Stack Developer",
+    title: "Software Engineer",
     phone: "0481908116",
     email: "Crokily@gmail.com",
-    location: "Kingsford, Sydney",
-    visa: "500 Visa",
+    location: " Kingsford, Sydney",
     links: {
       github: "https://github.com/Crokily",
       linkedin: "https://linkedin.com/in/Crokily",
-      website: "https://coly.cc"
+      website: " https://coly.cc"
     }
   },
   education: [
@@ -76,62 +88,80 @@ export const resumeData: ResumeData = {
   ],
   experience: [
     {
-      title: "UNSW AI Society (Sydney) | IT Director",
-      company: "",
+      company: "UNSW AI Society",
+      title: "IT Director",
       duration: "2024.12 – Now",
-      achievements: [
-        "Designed technology stack and system architecture for website, admin system, educational platform, and AI-powered Discord bot. Prioritized task management system using Next.js, Python, Tailwind CSS, Supabase, GPT API, and discord.py.",
-        "Led weekly meetings to define goals and gather feedback. Applied agile methodologies with GitHub Issues for task management, and hosting weekly team meetings to ensure progress.",
-        "Built a Discord bot for task creation, management, and notifications [s.coly.cc/taskbot].",
-        "Created management panel prototype with v0.dev, generating production-ready code and accelerating development.",
-        "Integrating website with Discord API to sync event data and enable advanced features including real-time transcription, automatic meeting summarization, and intelligent task assignments.",
-        "Configured association's email system on Lark with SPF, DKIM, and DMARC protocols to enhance security."
+      location: "Sydney",
+      overview: "Led team using Agile, coordinated requirement design, and drove project development and maintenance.",
+      project: {
+        name: "Collaborative Task Platform",
+        description: "A comprehensive task collaboration system with frontend, backend, and AI agent workflow."
+      },
+      contributions: [
+        "As Team Leader, led the entire project from 0 to 1. Used agile to coordinate team development.",
+        "Completed 50% of frontend development work, including initial architecture configuration and development of meeting, permission, and task pages, all secured by JWT middleware. Iterated page design 3 times for user experience.",
+        "Designed and implemented 10+ REST endpoints (tasks, meeting records, portfolios, roles, assignments). Used Pytest for unit testing. Solved N+1 Query Problem through query optimization, improving performance by 90%.",
+        "Utilized PydanticAI to achieve AI agent workflow for automatically generating tasks from Discord meeting.",
+        "Developed CI/CD pipeline using GitHub Actions and Docker Compose for automated deployment on VPS."
+      ],
+      techStack: [
+        "Next.js", "TypeScript", "MUI", "Zustand", "Python", "FastAPI", 
+        "PostgreSQL", "SQLAlchemy", "Alembic", "Py-Cord", "PydanticAI", 
+        "VPS", "Vercel", "Docker", "GitHub Actions"
       ]
     },
     {
-      title: "NetEase (Hangzhou) | Product Operations Intern",
-      company: "",
+      company: "Yongbin Adhesive Products Co., Ltd.",
+      title: "Software Engineer",
+      duration: "2021.07 - 2022.09",
+      location: "Dongguan, China",
+      overview: "Responsible for the website portion of the ERP system.",
+      project: {
+        name: "ERP System",
+        description: "A ERP system for manufacturing with OCR automated processing, production, and analysis workflows. "
+      },
+      contributions: [
+        "Responsible for full-stack development and maintenance of ERP system's automated order entry workflow. Integrated Baidu OCR API with Python and regular expressions to achieve intelligent extraction of order information into structured data and database entry, replacing manual processes and improving department efficiency by 90%. Maintained and added new order extraction patterns long-term, later developed 'semi-automated entry' feature for new customer order formats.",
+        "Configured Axios global interceptors for JWT user authentication and route guards. Independently completed multiple React page development and maintenance for production, customer, and order management modules.",
+        "Backend based on Django REST Framework, designed and implemented 15+ RESTful API endpoints. Used Openpyxl to develop automatic generation of delivery notes, product labels, monthly reconciliation statements and other Excel reports. Introduced Redis for hot API data caching, improving order list page loading speed by 3x."
+      ],
+      techStack: [
+        "JavaScript", "React", "React Router", "TailwindCSS", "Axios", "Python", 
+        "Django", "PostgreSQL", "Redis", "Baidu OCR API", "Openpyxl", "Docker", "Nginx"
+      ]
+    },
+    {
+      company: "NetEase Game",
+      title: "Product Operations Intern",
       duration: "2018.01 – 2020.10",
-      achievements: [
+      location: "Hangzhou, China",
+      overview: "Designed product solutions, coordinated team collaboration, and drove business growth.",
+      contributions: [
         "Created 10+ product requirement documents for feature development of children's coding platform \"CodeCombat.\"",
         "Designed AI-powered educational features, including \"AI Teacher\" that generated 46.9% of annual revenue.",
         "Created Python-based training courses, including a 7-day beginner's course that boosted user conversion.",
         "Interviewed 150+ users and converted insights into technical requirements to enhance product usability."
+      ],
+      techStack: [
       ]
     }
   ],
   projects: [
     {
-      name: "Word Dictation Application",
-      url: "https://d.coly.cc",
-      description: "Designed and implemented an English word dictation application using React, Next.js, TypeScript, Tailwind CSS, and Shadcn/UI.",
-      highlights: [
-        "Implemented smooth dictation experience using Web Speech API (TTS) with customizable playback settings",
-        "Optimized audio playback and auto-dictation logic using useRef and useCallback hooks",
-        "Developed data management system supporting .txt/.csv dictionary uploads with word definitions",
-        "Implemented persistent storage using localStorage for seamless user experience without login",
-        "Automated deployment using Docker, GitHub Actions, and Vercel"
-      ]
-    },
-    {
-      name: "Factory Management System",
-      description: "Developed a comprehensive factory management system for order, product, inventory, and production status tracking",
-      highlights: [
-        "Built frontend using Vue.js and Element UI, backend with Django framework and MySQL database",
-        "Implemented Redis caching for real-time order status updates and improved response times",
-        "Integrated OCR API for automated data extraction from PDF/images to reduce manual entry errors",
-        "Developed custom Excel export functionality for factory invoices using Python",
-        "Deployed system on AWS EC2 for reliable production use"
-      ]
-    },
-    {
-      name: "Online Classroom System",
-      url: "https://gitee.com/Crokily/ykt",
-      description: "Developed an online education platform using Vue.js, Node.js, MongoDB, and Redis",
-      highlights: [
-        "Implemented features for recorded courses, smart question banks, and online examinations",
-        "Integrated learning analytics tools for tracking student progress and optimizing teaching outcomes",
-        "Built real-time communication features for interactive learning experiences"
+      name: "Atlassian AI Whiteboard Tool",
+      comment: "The client from Atlassian",
+      duration: "2024.05 - Present",
+      description: "A whiteboard organization tool using AI to convert messy meeting whiteboard images into structured Confluence pages.",
+      contributions: [
+        "Responsible for frontend architecture design and initial development, built responsive user interface using React, Material-UI, and Vite, and completed core functions such as image upload and content preview editing.",
+        "Independently undertook backend API service development and implementation, built RESTful API with MVC + Service architecture based on Node.js and Express, utilized Drizzle ORM for type-safe data persistence operations. Completed AI agent workflow using AI SDK + Zod to provide structured multi-model intelligent image analysis functionality.",
+        "Implemented an asynchronous task queue system based on Upstash Redis. After users upload images, analysis tasks are pushed to the queue and consumed by an independent Worker process, achieving decoupling from main API service and ensuring system scalability and high availability.",
+        "Used Docker and Docker Compose to containerize backend API and asynchronous Worker services, configured GitHub Actions CI/CD workflow, and implemented automated deployment on Linux VPS."
+      ],
+      techStack: [
+        "JavaScript", "React", "React Router", "Material-UI", "Vite", "Node.js", 
+        "Express", "Drizzle ORM", "Upstash Redis", "AI SDK", "Zod", "Docker", 
+        "GitHub Actions", "Linux VPS"
       ]
     }
   ]
