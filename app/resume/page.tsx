@@ -13,11 +13,11 @@ export default function ResumePage() {
         className="bg-white text-gray-800 shadow-2xl"
         style={{
           fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-          lineHeight: 1.5,
+          lineHeight: 1.2,
           width: '210mm',
           minHeight: '297mm',
           maxHeight: '297mm',
-          padding: '5.5mm',
+          padding: '5mm',
           boxSizing: 'border-box',
         }}
       >

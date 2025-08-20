@@ -104,6 +104,8 @@ export const resumeData: ResumeData = {
         "Configured CI/CD pipelines using GitHub Actions and Docker, ensuring reliable automated deployments and system updates."
       ],
       techStack: [
+        "Linux", "Docker", "PostgreSQL", "Python", "FastAPI", "RESTful APIs",
+        "JWT", "GitHub Actions", "System Administration", "Ticketing Systems"
       ]
     },
     {
@@ -118,6 +120,7 @@ export const resumeData: ResumeData = {
       },
       contributions: [
         "Developed and maintained automated ERP order workflow (Python, Django, Baidu OCR), optimized APIs and reporting, integrated Redis for performance, provided documentation and support to improve team efficiency.",
+        "Independently completed multiple React page development and maintenance for production, customer, and order management modules.",
         "Provided technical support for ERP system users, troubleshooting system issues and resolving customer-reported problems efficiently. Maintained system uptime and resolved critical issues affecting production workflow.",
         "Managed system maintenance tasks including Docker container updates, log analysis, and performance monitoring using Linux console tools."
       ],
@@ -139,6 +142,8 @@ export const resumeData: ResumeData = {
         "Interviewed 150+ users and converted insights into technical requirements to enhance product usability."
       ],
       techStack: [
+        "Technical Documentation", "Customer Support", "Knowledge Base Management",
+        "Problem Analysis", "User Interviewing", "SOP Development"
       ]
     }
   ],
