@@ -76,7 +76,7 @@ export default function ResumePage() {
         <section className="flex flex-col space-y-1 mb-2" aria-label="Professional Summary">
           <h2 className="font-bold text-lg text-blue-700 border-b-2 border-gray-200">Professional Summary</h2>
           <div className="text-sm text-gray-700 leading-relaxed">
-            {highlightKeywords(summary)}
+            {summary && highlightKeywords(summary)}
           </div>
         </section>
 
