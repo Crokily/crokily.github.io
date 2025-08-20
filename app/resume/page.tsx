@@ -3,7 +3,7 @@ import { resumeData } from './resumeData';
 import { highlightKeywords, processLinksInText, processQuotes } from './utils';
 
 export default function ResumePage() {
-  const { personalInfo, education, experience, projects } = resumeData;
+  const { personalInfo, education, experience, summary } = resumeData;
 
   return (
     <main className="min-h-screen bg-gray-100 p-2 flex flex-col items-center">
@@ -13,16 +13,16 @@ export default function ResumePage() {
         className="bg-white text-gray-800 shadow-2xl"
         style={{
           fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-          lineHeight: 1.1,
+          lineHeight: 1.5,
           width: '210mm',
           minHeight: '297mm',
           maxHeight: '297mm',
-          padding: '3.25mm',
+          padding: '5.5mm',
           boxSizing: 'border-box',
         }}
       >
         {/* Header */}
-        <header className="flex flex-row flex-nowrap justify-between">
+        <header className="flex flex-row flex-nowrap justify-between mb-2">
           <div className="flex flex-col items-center">
             <h1 className="text-2xl font-bold leading-5 text-blue-600 tracking-wide">
               {personalInfo.name}
@@ -53,8 +53,8 @@ export default function ResumePage() {
         </header>
 
         {/* Education */}
-        <section className="flex flex-col space-y-0.5 mb-1" aria-label="Education">
-          <h2 className="font-bold text-base text-blue-700 border-b-2 border-gray-200">Education</h2>
+        <section className="flex flex-col space-y-1 mb-2" aria-label="Education">
+          <h2 className="font-bold text-lg text-blue-700 border-b-2 border-gray-200">Education</h2>
           {education.map((edu, index) => (
             <article key={index} className="flex flex-row flex-nowrap justify-between">
               <div>
@@ -72,59 +72,17 @@ export default function ResumePage() {
           ))}
         </section>
 
-        {/* Projects */}
-        <section className="flex flex-col space-y-0.5 mb-1" aria-label="Project">
-          <h2 className="font-bold text-base text-blue-700 border-b-2 border-gray-200">Projects</h2>
-          
-          {projects.map((project, index) => (
-            <article key={index} className="flex flex-col" aria-label={project.name}>
-              {/* Project Header */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <h3 className="font-bold">{project.name}</h3>
-                  {project.comment && (
-                    <span className="text-sm text-gray-500 ml-2">
-                      {project.comment}
-                    </span>
-                  )}
-                  {project.url && (
-                    <a href={project.url} target="_blank" className="text-sm text-gray-500 ml-2">
-                      {project.url.replace('https://', '')}
-                    </a>
-                  )}
-                </div>
-                {project.duration && (
-                  <time className="text-sm text-gray-600">{project.duration}</time>
-                )}
-              </div>
-              
-              {/* Project Description */}
-              <p className="text-sm mb-0.5 text-gray-700">
-                {highlightKeywords(project.description)}
-              </p>
-
-              {/* Tech Stack */}
-              <div className="text-xs text-blue-600 italic">
-                <span>{project.techStack?.join(', ')}</span>
-              </div>
-              
-              {/* Contributions */}
-              <div className="mb-0.5">
-                <ul className="list-disc text-sm text-gray-700 space-y-0 pl-3.5">
-                  {project.contributions.map((contribution, contIndex) => (
-                    <li key={contIndex}>
-                      {highlightKeywords(contribution)}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))}
+        {/* Professional Summary */}
+        <section className="flex flex-col space-y-1 mb-2" aria-label="Professional Summary">
+          <h2 className="font-bold text-lg text-blue-700 border-b-2 border-gray-200">Professional Summary</h2>
+          <div className="text-sm text-gray-700 leading-relaxed">
+            {highlightKeywords(summary)}
+          </div>
         </section>
 
         {/* Work Experience */}
-        <section className="flex flex-col space-y-0.5 mb-1" aria-label="Experience">
-          <h2 className="font-bold text-base text-blue-700 border-b-2 border-gray-200">Work Experience</h2>
+        <section className="flex flex-col space-y-1 mb-2" aria-label="Experience">
+          <h2 className="font-bold text-lg text-blue-700 border-b-2 border-gray-200">Work Experience</h2>
           
           {experience.map((exp, index) => (
             <article key={index} className="flex flex-col mb-2" aria-label={`${exp.company} ${exp.title}`}>
@@ -139,7 +97,7 @@ export default function ResumePage() {
               </div>
               
               {/* Overview and Location */}
-              <div className="flex flex-row flex-nowrap justify-between mt-0.5 mb-0.5">
+              <div className="flex flex-row flex-nowrap justify-between mt-1 mb-1">
                 {/* 在className中限制p的长度 */ }
                 <p className="text-sm text-gray-700 w-6/7">
                   {highlightKeywords(exp.overview)}
@@ -149,7 +107,7 @@ export default function ResumePage() {
 
               {/* Project Description (if exists), project name 和 description 在同一行 */}
               {exp.project && (
-                <div className="mb-0.5">
+                <div className="mb-1">
                   <span className="font-semibold text-sm">{exp.project.name}: </span>
                   <span className="text-sm text-gray-700 w-8/9">
                     {highlightKeywords(exp.project.description)}
@@ -157,14 +115,16 @@ export default function ResumePage() {
                 </div>
               )}
               {/* Tech Stack, 字体更小且斜体，和正文对比更明显 */}
-              <div className="text-xs text-blue-600 italic">
-                <span>{exp.techStack.join(', ')}</span>
-              </div>
+              {exp.techStack && exp.techStack.length > 0 && (
+                <div className="text-xs text-blue-600 italic mb-1.5">
+                  <span>{exp.techStack.join(', ')}</span>
+                </div>
+              )}
 
               {/* Contributions */}
-              <div className="mb-0.5">
+              <div className="mb-1">
                 {/* <h4 className="font-semibold text-sm">Key Contributions:</h4> */}
-                <ul className="list-disc text-sm text-gray-700 space-y-0 pl-3.5">
+                <ul className="list-disc text-sm text-gray-700 space-y-1 pl-3.5">
                   {exp.contributions.map((contribution, contIndex) => (
                     <li key={contIndex}>
                       {processLinksInText(processQuotes(contribution))}
