@@ -135,7 +135,7 @@ export const resumeData: ResumeData = {
     },
     {
       company: "NetEase Game",
-      title: "Product Operations Intern",
+      title: "Product Manager Intern",
       duration: "2018.01 – 2020.10",
       location: "Hangzhou, China",
       overview: "Designed product solutions, coordinated team collaboration, and drove business growth.",
