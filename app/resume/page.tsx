@@ -3,7 +3,7 @@ import { resumeData } from './resumeData';
 import { highlightKeywords, processLinksInText, processQuotes } from './utils';
 
 export default function ResumePage() {
-  const { personalInfo, education, experience, projects } = resumeData;
+  const { personalInfo, summary, education, experience, projects } = resumeData;
 
   return (
     <main className="min-h-screen bg-gray-100 p-2 flex flex-col items-center">
@@ -51,6 +51,14 @@ export default function ResumePage() {
             </p>
           </address>
         </header>
+
+        {/* Summary */}
+        <section className="flex flex-col space-y-0.5 mb-1" aria-label="Summary">
+          <h2 className="font-bold text-base text-blue-700 border-b-2 border-gray-200">Summary</h2>
+          <p className="text-sm text-gray-700">
+            {highlightKeywords(summary)}
+          </p>
+        </section>
 
         {/* Education */}
         <section className="flex flex-col space-y-0.5 mb-1" aria-label="Education">

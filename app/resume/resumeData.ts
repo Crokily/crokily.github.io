@@ -11,6 +11,7 @@ export interface ResumeData {
       website: string;
     };
   };
+  summary: string;
   education: {
     degree: string;
     institution: string;
@@ -73,6 +74,7 @@ export const resumeData: ResumeData = {
       website: " https://coly.cc"
     }
   },
+  summary: "Passionate software engineer with 3+ years of full-stack development experience, specializing in AI-powered applications and scalable web systems. Proficient in modern technologies including React, Next.js, Python, FastAPI, and cloud deployment. Strong background in AI integration, system optimization, and agile development practices.",
   education: [
     {
       degree: "Master of Information Technology",
@@ -80,13 +82,6 @@ export const resumeData: ResumeData = {
       duration: "2023.09-2025.09",
       location: "Sydney, Australia",
       wam: "82"
-    },
-    {
-      degree: "Bachelor of Software Engineering",
-      institution: "Zhongkai University of Agriculture and Engineering",
-      duration: "2017.09-2021.06",
-      location: "Guangzhou, China",
-      wam: "81.7"
     }
   ],
   experience: [
