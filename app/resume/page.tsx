@@ -54,10 +54,12 @@ export default function ResumePage() {
 
         {/* Summary */}
         <section className="flex flex-col space-y-0.5 mb-1" aria-label="Summary">
-          <h2 className="font-bold text-base text-blue-700 border-b-2 border-gray-200">Summary</h2>
-          <p className="text-sm text-gray-700">
-            {highlightKeywords(summary)}
-          </p>
+          <div className="border-t-2 border-gray-200 mt-1.5">
+            <p className="text-sm text-gray-700">
+              <span className="font-bold text-base text-blue-700">Summary: </span>
+              {highlightKeywords(summary)}
+            </p>
+          </div>
         </section>
 
         {/* Education */}
@@ -66,11 +68,11 @@ export default function ResumePage() {
           {education.map((edu, index) => (
             <article key={index} className="flex flex-row flex-nowrap justify-between">
               <div>
-                <div className="flex items-center">
-                  <h3 className="font-bold">{edu.degree}</h3>
-                  {edu.wam && <span className="text-sm text-gray-500 ml-2">WAM {edu.wam}</span>}
-                </div>
-                <p className="text-sm">{edu.institution}</p>
+                <h3 className="font-bold">{edu.institution}</h3>
+                <p className="text-sm">
+                  {edu.degree}
+                  {edu.wam && <span className="text-gray-500 ml-2">WAM {edu.wam}</span>}
+                </p>
               </div>
               <div className="text-right">
                 <time className="text-sm text-gray-600">{edu.duration}</time>
