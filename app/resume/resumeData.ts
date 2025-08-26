@@ -74,7 +74,8 @@ export const resumeData: ResumeData = {
       website: " https://coly.cc"
     }
   },
-  summary: "Passionate software engineer with 3+ years of full-stack development experience, specializing in AI-powered applications and scalable web systems. Proficient in modern technologies including React, Next.js, Python, FastAPI, and cloud deployment. Strong background in AI integration, system optimization, and agile development practices.",
+  // Summary length: about 340 words
+  summary: "Passionate software engineer with 1+ years of full-stack development experience, specializing in AI-powered applications and web development. Proficient in modern technologies including React, TypeScript, Next.js, Python, FastAPI, and cloud deployment. Familiar with AI integration, system optimization, and agile development practices.",
   education: [
     {
       degree: "Master of Information Technology",
