@@ -5,6 +5,11 @@ import { useState } from 'react';
 export default function DownloadButton() {
   const [isLoading, setIsLoading] = useState(false);
 
+  // Hide the button in production environment (Vercel)
+  if (process.env.NODE_ENV === 'production') {
+    return null;
+  }
+
   const handleDownload = async () => {
     setIsLoading(true);
     try {
