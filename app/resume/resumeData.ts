@@ -153,7 +153,7 @@ export const resumeData: ResumeData = {
     {
       name: "Atlassian AI Whiteboard Tool",
       comment: "The client from Atlassian",
-      duration: "2024.05 - Present",
+      duration: "2025.05 - 2025.08",
       description: "A whiteboard organization tool using AI to convert messy meeting whiteboard images into structured Confluence pages.",
       contributions: [
         "Responsible for frontend architecture design and initial development, built responsive user interface using React, Material-UI, and Vite, and completed core functions such as image upload and content preview editing.",
