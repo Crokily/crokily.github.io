@@ -97,7 +97,7 @@ export const resumeData: ResumeData = {
       },
       contributions: [
         "As Team Leader, led the entire project from 0 to 1. Used agile to coordinate team development.",
-        "Completed 50% of frontend development work, including initial architecture configuration and development of meeting, permission, and task pages, all secured by JWT middleware. Iterated page design 3 times for user experience.",
+        "Developed 50% of frontend including meeting, permission and task management pages with OAuth authentication, improving UX through 3 design iterations.",
         "Designed and implemented 10+ REST endpoints (tasks, meeting records, portfolios, roles, assignments). Used Pytest for unit testing. Solved N+1 Query Problem through query optimization, improving performance by 90%.",
         "Utilized PydanticAI to achieve AI agent workflow for automatically generating tasks from Discord meeting.",
         "Developed CI/CD pipeline using GitHub Actions and Docker Compose for automated deployment on VPS."
@@ -119,8 +119,8 @@ export const resumeData: ResumeData = {
         description: "A ERP system for manufacturing with OCR automated processing, production, and analysis workflows. "
       },
       contributions: [
-        "Responsible for full-stack development and maintenance of ERP system's automated order entry workflow. Integrated Baidu OCR API with Python and regular expressions to achieve intelligent extraction of order information into structured data and database entry, replacing manual processes and improving department efficiency by 90%. Maintained and added new order extraction patterns long-term, later developed 'semi-automated entry' feature for new customer order formats.",
-        "Configured Axios global interceptors for JWT user authentication and route guards. Independently completed multiple React page development and maintenance for production, customer, and order management modules.",
+        "Responsible for full-stack development of ERP system's automated order entry workflow, integrating Baidu OCR API to improve efficiency by 90%, with long-term maintenance and development of semi-automated entry features.",
+        "Completed multiple React page development and maintenance for production, customer, and order management modules. Configured Axios global interceptors for JWT user authentication and route guards.",
         "Backend based on Django REST Framework, designed and implemented 15+ RESTful API endpoints. Used Openpyxl to develop automatic generation of delivery notes, product labels, monthly reconciliation statements and other Excel reports. Introduced Redis for hot API data caching, improving order list page loading speed by 3x."
       ],
       techStack: [
