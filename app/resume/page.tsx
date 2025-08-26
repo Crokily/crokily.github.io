@@ -54,7 +54,7 @@ export default function ResumePage() {
 
         {/* Summary */}
         <section className="flex flex-col space-y-0.5 mb-1" aria-label="Summary">
-          <div className="border-t-2 border-gray-200 mt-1.5">
+          <div className="border-t-2  border-gray-200 mt-1.5">
             <p className="text-sm text-gray-700">
               <span className="font-bold text-base text-blue-700">Summary: </span>
               {highlightKeywords(summary)}
