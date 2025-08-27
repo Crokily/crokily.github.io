@@ -75,7 +75,7 @@ export const resumeData: ResumeData = {
     }
   },
   // Summary length: about 340 words
-  summary: "Experienced Full Stack Developer with 1+ years of React/JavaScript expertise, leading complex web applications. Familiar with Node.js, Express.js, Python, Django, and cloud deployment, passionate about exploring new technologies. Experienced with PostgreSQL databases and API integrations for business applications.",
+  summary: "Passionate software engineer with 1+ years of full-stack development experience, specializing in AI applications and web development. Familiar in modern technologies including React, TypeScript, Next.js, Python, FastAPI, and cloud deployment. Familiar with AI integration, system optimization, and agile development practices.",
   education: [
     {
       degree: "Master of Information Technology",
