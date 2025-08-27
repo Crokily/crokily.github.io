@@ -54,11 +54,10 @@ export default function CoverLetterPage() {
         {/* Introduction */}
         <section className="mb-6">
           <p className="mb-4">
-            With great excitement, I am writing in response to your advertisement for the{' '}
+          I am writing to apply for the {' '}
             <span className="font-semibold">{recipient.position}</span> position at{' '}
             <span className="font-semibold">{recipient.company}</span>.
           </p>
-          <p>{content.introduction}</p>
         </section>
 
         {/* Highlights */}

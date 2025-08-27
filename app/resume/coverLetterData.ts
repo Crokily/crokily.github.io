@@ -10,7 +10,6 @@ export interface CoverLetterData {
     position: string;
   };
   content: {
-    introduction: string;
     highlights: string[];
     conclusion: string;
   };
@@ -32,11 +31,10 @@ export const coverLetterData: CoverLetterData = {
     position: "Full Stack Developer"
   },
   content: {
-    introduction: "I am writing to apply for the Full Stack Developer position at LITSAS & CO.",
     highlights: [
-      "Experience with React and TypeScript for building responsive front-end applications",
-      "Skills in Python, Django, and FastAPI for robust back-end development",
-      "Knowledge of PostgreSQL databases and RESTful API design and integration",
+      "Good knowledge of React and JavaScript for front-end development",
+      "Experience with Python and Django for back-end development",
+      "Skills in building RESTful APIs and database systems with PostgreSQL",
       "Experience with authentication systems including JWT and OAuth",
       "Familiar with Docker, CI/CD pipelines, and cloud deployment practices",
       "Strong problem-solving abilities and collaborative team experience"
