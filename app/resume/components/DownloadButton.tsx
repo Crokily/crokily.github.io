@@ -13,11 +13,6 @@ export default function DownloadButton({ type = 'resume' }: DownloadButtonProps)
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
-  // Hide the button in production environment (Vercel)
-  if (process.env.NODE_ENV === 'production') {
-    return null;
-  }
-
   const handleDownload = async () => {
     setIsLoading(true);
     try {
@@ -65,6 +60,11 @@ export default function DownloadButton({ type = 'resume' }: DownloadButtonProps)
       router.push('/resume');
     }
   };
+
+  // Hide buttons in production environment (Vercel)
+  if (process.env.NODE_ENV === 'production') {
+    return null;
+  }
 
   return (
     <div className="fixed bottom-8 right-8 print:hidden flex flex-col gap-3">
