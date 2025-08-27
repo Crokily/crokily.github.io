@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import puppeteer from 'puppeteer-core';
 import chromium from '@sparticuz/chromium-min';
+import { resumeData } from '../../resume/resumeData';
 
 export async function GET() {
   let browser = null;
@@ -94,12 +95,16 @@ export async function GET() {
       },
     });
 
+    // 动态生成文件名
+    const { name, title } = resumeData.personalInfo;
+    const fileName = `${name} - ${title}.pdf`;
+
     // 返回PDF文件
     return new NextResponse(pdfBuffer, {
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',
-        'Content-Disposition': 'attachment; filename="resume.pdf"',
+        'Content-Disposition': `attachment; filename="${fileName}"`,
       },
     });
 

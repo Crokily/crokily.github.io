@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { resumeData } from '../resumeData';
 
 export default function DownloadButton() {
   const [isLoading, setIsLoading] = useState(false);
@@ -18,12 +19,17 @@ export default function DownloadButton() {
       if (!response.ok) {
         throw new Error(`Error: ${response.statusText}`);
       }
-      
+
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'resume.pdf';
+
+      // 动态生成文件名：name - title.pdf
+      const { name, title } = resumeData.personalInfo;
+      const fileName = `${name} - ${title}.pdf`;
+      a.download = fileName;
+
       document.body.appendChild(a);
       a.click();
       a.remove();

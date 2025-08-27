@@ -1,6 +1,12 @@
 import DownloadButton from './components/DownloadButton';
 import { resumeData } from './resumeData';
 import { highlightKeywords, processLinksInText, processQuotes } from './utils';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: `${resumeData.personalInfo.name} - ${resumeData.personalInfo.title}`,
+  description: `${resumeData.personalInfo.name}'s professional resume and portfolio`,
+};
 
 export default function ResumePage() {
   const { personalInfo, summary, education, experience, projects } = resumeData;
