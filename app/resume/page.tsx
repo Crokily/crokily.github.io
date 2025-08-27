@@ -197,7 +197,7 @@ export default function ResumePage() {
       </div>
 
       {/* Download Button Component */}
-      <DownloadButton />
+      <DownloadButton type="resume" />
     </main>
   );
 } 
