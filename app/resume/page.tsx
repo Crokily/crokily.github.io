@@ -1,4 +1,5 @@
 import DownloadButton from './components/DownloadButton';
+import Navigation from './components/Navigation';
 import { resumeData } from './resumeData';
 import { highlightKeywords, processLinksInText, processQuotes } from './utils';
 import type { Metadata } from 'next';
@@ -13,6 +14,9 @@ export default function ResumePage() {
 
   return (
     <main className="min-h-screen bg-gray-100 p-2 flex flex-col items-center">
+      {/* Navigation */}
+      <Navigation />
+
       {/* A4 Container */}
       <div
         id="resume-content"
@@ -197,7 +201,7 @@ export default function ResumePage() {
       </div>
 
       {/* Download Button Component */}
-      <DownloadButton />
+      <DownloadButton type="resume" />
     </main>
   );
 } 
